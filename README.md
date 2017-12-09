@@ -1,4 +1,4 @@
-﻿### Wellcome to the web-page of SPbPU-BCI-template!
+﻿# Wellcome to the web-page of SPbPU-BCI-template!
 
 
 Данная страница предназначена для авторов и редакторов книг, издаваемых в Санкт-Петербургском Политехническом университете Петра Великого (SPbPU) и отправляемых для индексации в Book Citation Index из Core Collection Web of Science (далее - издания SPbPU-BCI). 
@@ -8,8 +8,9 @@
 https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
 
 
-## Quick introduction
+# Quick introduction
 
+In Eglish
 
 1. Download or fork template folder.
 2. Read Author_guide_SPbPU-BCI.pdf and Template_book1.pdf.
@@ -17,6 +18,7 @@ https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
 4. Rename everywhere "AuthorsSurnames" using short abbreviations.
 5. Add content in ch_folder_AuthorsSurnames.   
 
+In Russian
 
 1. Скачайте или сделайте форк папки шаблона.
 2. Прочитайте Author__guide_SPbPU-BCI.pdf и Template_book1.pdf.
@@ -29,24 +31,24 @@ Enjoy! Email questions to parhomenko.v@gmail.com.
 
 ## SPbPU-BCI-template editors 
 
-# Editors of Russian-Phd-LaTeX-Dissertation-Template
+### Editors of Russian-Phd-LaTeX-Dissertation-Template
 
 Andrey Akinshin. 
 Other persons see, please, in Acknolegement.
 
-# Code editors of SPbPU-BCI-template
+### Code editors of SPbPU-BCI-template
 
 Vladimir Parkhomenko
 
 
-# Content editors of SPbPU-BCI-template
+### Content editors of SPbPU-BCI-template
 
 Vladimir Parkhomenko
 Oleg Piskun
 Konstantin Shvetsov
 Alexander Schukin
 
-# Useful remarks to the content of SPbPU-BCI-template
+### Useful remarks to the content of SPbPU-BCI-template
 
 Natalia Sokolova
 Viktoria Lisenko
