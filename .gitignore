@@ -56,8 +56,7 @@ bpfont14_suppl.txt
 Template_book1.tex
 Author_guide_SPbPU-BCI.tex
 
-gitignore.txt
-.gitignore
+
 
 *.idx
 *.ilg
