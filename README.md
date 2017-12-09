@@ -10,7 +10,7 @@ https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
 
 # Quick introduction
 
-In Eglish
+In English
 
 1. Download or fork template folder.
 2. Read Author_guide_SPbPU-BCI.pdf and Template_book1.pdf.
