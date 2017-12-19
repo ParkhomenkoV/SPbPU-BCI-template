@@ -1,0 +1,34 @@
+%% In case of deleting the following info, please, delete the examples in the chapter body.
+
+%% В случае комментирования (удаления) следующего кода могут появиться ошибки при компиляции примеров, т.е. необходимо будет удалить и примеры в теле главы.
+
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
+%http://tex.stackexchange.com/questions/16645/blackboard-italic-font
+% for itallic sign of context K to be a parametr
+\DeclareMathAlphabet{\mathbbmsl}{U}{bbm}{m}{sl}
+\newcommand{\cont}[1][K]{\ensuremath{\mathbbmsl{#1}}}
+
+%%ARROWS
+
+%mu = math unit = 1em
+%\mkern-18mu
+%"minus quad"
+
+%https://tex.stackexchange.com/a/389805/44348
+\newcommand{\fcaarrow}[1]{%
+	{}^{\scriptscriptstyle\bm{#1}}
+}
+%%%%%%%%%%%%%%%%%%%%%%% ARROWS from Formal Concept Analysis
+% small and bold \uparrow
+\newcommand{\uA}{\fcaarrow{{\uparrow\mkern-12mu}}}
+% small and bold \downarrow
+\newcommand{\dA}{\fcaarrow{\downarrow\mkern-2mu}}
+% small and bold \uparrow+\downarrow
+\newcommand{\ud}{\fcaarrow{\uparrow\mkern-12mu}\fcaarrow{\downarrow\mkern-2mu}}
+% small and bold \downarrow+\uparrow
+\newcommand{\du}{\fcaarrow{\downarrow\mkern-2mu}\fcaarrow{\uparrow\mkern-12mu}}
+
+
+%http://tex.stackexchange.com/questions/74125/how-do-i-put-text-over-symbols
+\newcommand\eqdef{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny def}}}{=}}} %\sffamily

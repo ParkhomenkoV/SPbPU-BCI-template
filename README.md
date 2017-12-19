@@ -12,21 +12,20 @@ https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
 
 In English
 
-1. Download or fork template folder.
-2. Read Author_guide_SPbPU-BCI.pdf and Template_book1.pdf.
-3. Compile ch_compile_AuthorsSurnames.tex.
-4. Rename everywhere "AuthorsSurnames" using short abbreviations.
-5. Add content in ch_folder_AuthorsSurnames.   
+1. Download or clone template folder using the green button.
+2. Read Author_guide_SPbPU-BCI.pdf and SPbPU-BCI_book1.pdf.
+3. Compile my_chapter.tex.
+4. Add content only in files of my_folder.   
 
 In Russian
 
-1. Скачайте или сделайте форк папки шаблона.
-2. Прочитайте Author__guide_SPbPU-BCI.pdf и Template_book1.pdf.
-3. Компилируйте ch_compile_AuthorsSurnames.tex.
-4. Переименуйте везде "AuthorsSurnames", используя короткие аббревиатуры.
-5. Добавляйте контент в ch_folder_AuthorsSurnames.  
+1. Скачайте или клонируйте папку шаблона используя зелёную кнопку.
+2. Прочитайте Author_guide_SPbPU-BCI.pdf и SPbPU-BCI_book1.pdf.
+3. Компилируйте my_chapter.tex.
+4. Добавляйте контент только в файлы папки my_folder.  
 
-Enjoy! Email questions to parhomenko.v@gmail.com.
+
+Ask questions on the web-page https://github.com/ParkhomenkoV/SPbPU-BCI-template/issues
 
 
 ## SPbPU-BCI-template editors 

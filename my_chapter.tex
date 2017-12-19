@@ -1,0 +1,33 @@
+%%%% This is the main file for a chapter from the SPbPU-BCI template  %%%%
+%%
+%%   The following settings files are deeply modified files of 
+%%   https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template.
+%%   Full list of differences can be achieved by git commands.
+%%   List of template authors can be seen in the README.md file.
+%%   Please, write feedback on the web-page https://github.com/ParkhomenkoV/SPbPU-BCI-template/issues.
+%%  
+%%
+\input{template_settings/ch_preamble} % please, keep unmodified
+
+
+%%%% Author settings
+%%   Please, see all possible packages using the search in files of ch_preamble. 
+%%   Command \newpackage can be written only after a technical editor's approvement.
+%%   Please, for user-defined commands write only unique command titles.
+
+\input{my_folder/my_settings} % author settings
+
+\begin{document}
+	
+\input{template_settings/common/renames} % please, keep unmodified
+	
+\input{my_folder/ch_content} % chapter body
+
+
+%%%% Index (Предметный указатель)
+%% Only for accepted chapters (только для принятых работ)! 
+%% Uncomment and check, then comment again before a camera-ready pdf compilation and submission)
+%\input{template_settings/indexEng} 	% in English
+%\input{template_settings/index} 		% in Russian
+
+\end{document}
