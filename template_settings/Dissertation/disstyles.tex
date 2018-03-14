@@ -21,8 +21,16 @@ includefoot,
 %% Реализация средствами класса (на основе setspace) ближе к типографской классике.
 %% И правит сразу и в таблицах (если со звёздочкой) 
 %\DoubleSpacing*     % Двойной интервал
-\OnehalfSpacing*    % Полуторный интервал
+\OnehalfSpacing*    % Полуторный интервал % * to force it in the floats
 %\setSpacing{1.42}   % Полуторный интервал, подобный Ворду (возможно, стоит включать вместе с предыдущей строкой)
+
+%https://tex.stackexchange.com/questions/65849/confusion-onehalfspacing-vs-spacing-vs-word-vs-the-world/276516#276516
+%https://tex.stackexchange.com/questions/13742/what-does-double-spacing-mean
+%https://tex.stackexchange.com/questions/30073/why-is-the-linespread-factor-as-it-is/30114#30114
+
+%A possible definition of \onehalfspacing and \doublespacing is that the ratio between font size and \baselineskip should be 1.5 resp. 2.....
+%\baselineskip (vertical skip between the base lines of two successive lines of type) of XXpt. 
+
 
 %%% Выравнивание и переносы %%%
 %% http://tex.stackexchange.com/questions/241343/what-is-the-meaning-of-fussy-sloppy-emergencystretch-tolerance-hbadness
@@ -112,20 +120,20 @@ includefoot,
 
 %% Форматирование SPbPU %%
 %https://tex.stackexchange.com/questions/394227/memoir-toc-indent-the-second-line-by-numberspace-width-in-the-previous-line-or
-		\renewcommand{\mempreaddchaptertotochook}{%
-			\addtocontents{toc}{%
-				\protect\settowidth{\protect\cftchapternumwidth}{\cftchapterfont \thechapter.\space}%
-				\protect\setlength{\protect\cftsectionindent}{\protect\cftchapternumwidth}%
-			}%
-			\addtocontents{tec}{%
-				\protect\settowidth{\protect\cftchapternumwidth}{\cftchapterfont \thechapter.\space}%
-				\protect\setlength{\protect\cftsectionindent}{\protect\cftchapternumwidth}%
-			}%
-			\addtocontents{tuc}{%
-			\protect\settowidth{\protect\cftchapternumwidth}{\cftchapterfont \thechapter.\space}%
-			\protect\setlength{\protect\cftsectionindent}{\protect\cftchapternumwidth}%
-		}%
-		}
+%		\renewcommand{\mempreaddchaptertotochook}{%
+%			\addtocontents{toc}{%
+%				\protect\settowidth{\protect\cftchapternumwidth}{\cftchapterfont \thechapter.\space}%
+%				\protect\setlength{\protect\cftsectionindent}{\protect\cftchapternumwidth}%
+%			}%
+%			\addtocontents{tec}{%
+%				\protect\settowidth{\protect\cftchapternumwidth}{\cftchapterfont \thechapter.\space}%
+%				\protect\setlength{\protect\cftsectionindent}{\protect\cftchapternumwidth}%
+%			}%
+%			\addtocontents{tuc}{%
+%			\protect\settowidth{\protect\cftchapternumwidth}{\cftchapterfont \thechapter.\space}%
+%			\protect\setlength{\protect\cftsectionindent}{\protect\cftchapternumwidth}%
+%		}%
+%		}
 %		\renewcommand{\mempreaddparttotochook}{%
 %		\addtocontents{toc}{%
 %		\protect\settowidth{\protect\cftpartnumwidth}{\cftpartfont \thepart.\space}%
@@ -133,55 +141,55 @@ includefoot,
 %		\protect\setlength{\protect\cftsectionindent}{\protect\cftchapternumwidth}%
 %				}%
 %		}		
-		\usepackage{xpatch}
-		\makeatletter
-		%% for standard ToC called <<toc>>
-		\xpatchcmd{\@m@mschapter}% <cmd>
-		{\@schapter}% <search>
-		{\addtocontents{toc}{\protect\settowidth{\protect\cftsectionindent}{\protect\cftchapterfont \thechapter.\space}}%
-			\@schapter}% <replace>
-		{}{}% <success><failure>
-		\patchcmd{\M@sect}% <cmd>
-		{\addcontentsline}% <search>
-		{\addtocontents{toc}{%
-				\protect\settowidth{\csname cft#1numwidth\endcsname}{\csname cft#1font\endcsname\csname the#1\endcsname.\space}%
-				\protect\setlength{\csname cftsub#1indent\endcsname}{\protect\dimexpr\csname cft#1numwidth\endcsname+\csname cft#1indent\endcsname}%
-			}%
-			\addcontentsline}% <replace>
-		{}{}% <success><failure>
-		%% for ToC called <<tec>>
-		\xpatchcmd{\@m@mschapter}% <cmd>
-		{\@schapter}% <search>
-		{\addtocontents{tec}{\protect\settowidth{\protect\cftsectionindent}{\protect\cftchapterfont \thechapter.\space}}%
-			\@schapter}% <replace>
-		{}{}% <success><failure>
-		\patchcmd{\M@sect}% <cmd>
-		{\addcontentsline}% <search>
-		{\addtocontents{tec}{%
-				\protect\settowidth{\csname cft#1numwidth\endcsname}{\csname cft#1font\endcsname\csname the#1\endcsname.\space}%
-				\protect\setlength{\csname cftsub#1indent\endcsname}{\protect\dimexpr\csname cft#1numwidth\endcsname+\csname cft#1indent\endcsname}%
-			}%
-			\addcontentsline}% <replace>
-		{}{}% <success><failure>
-		%% for ToC called <<tuc>>
-		\xpatchcmd{\@m@mschapter}% <cmd>
-		{\@schapter}% <search>
-		{\addtocontents{tuc}{\protect\settowidth{\protect\cftsectionindent}{\protect\cftchapterfont \thechapter.\space}}%
-			\@schapter}% <replace>
-		{}{}% <success><failure>
-		\patchcmd{\M@sect}% <cmd>
-		{\addcontentsline}% <search>
-		{\addtocontents{tuc}{%
-				\protect\settowidth{\csname cft#1numwidth\endcsname}{\csname cft#1font\endcsname\csname the#1\endcsname.\space}%
-				\protect\setlength{\csname cftsub#1indent\endcsname}{\protect\dimexpr\csname cft#1numwidth\endcsname+\csname cft#1indent\endcsname}%
-			}%
-			\addcontentsline}% <replace>
-		{}{}% <success><failure>
-		\makeatother
+%		\usepackage{xpatch}
+%		\makeatletter
+%		%% for standard ToC called <<toc>>
+%		\xpatchcmd{\@m@mschapter}% <cmd>
+%		{\@schapter}% <search>
+%		{\addtocontents{toc}{\protect\settowidth{\protect\cftsectionindent}{\protect\cftchapterfont \thechapter.\space}}%
+%			\@schapter}% <replace>
+%		{}{}% <success><failure>
+%		\patchcmd{\M@sect}% <cmd>
+%		{\addcontentsline}% <search>
+%		{\addtocontents{toc}{%
+%				\protect\settowidth{\csname cft#1numwidth\endcsname}{\csname cft#1font\endcsname\csname the#1\endcsname.\space}%
+%				\protect\setlength{\csname cftsub#1indent\endcsname}{\protect\dimexpr\csname cft#1numwidth\endcsname+\csname cft#1indent\endcsname}%
+%			}%
+%			\addcontentsline}% <replace>
+%		{}{}% <success><failure>
+%		%% for ToC called <<tec>>
+%		\xpatchcmd{\@m@mschapter}% <cmd>
+%		{\@schapter}% <search>
+%		{\addtocontents{tec}{\protect\settowidth{\protect\cftsectionindent}{\protect\cftchapterfont \thechapter.\space}}%
+%			\@schapter}% <replace>
+%		{}{}% <success><failure>
+%		\patchcmd{\M@sect}% <cmd>
+%		{\addcontentsline}% <search>
+%		{\addtocontents{tec}{%
+%				\protect\settowidth{\csname cft#1numwidth\endcsname}{\csname cft#1font\endcsname\csname the#1\endcsname.\space}%
+%				\protect\setlength{\csname cftsub#1indent\endcsname}{\protect\dimexpr\csname cft#1numwidth\endcsname+\csname cft#1indent\endcsname}%
+%			}%
+%			\addcontentsline}% <replace>
+%		{}{}% <success><failure>
+%		%% for ToC called <<tuc>>
+%		\xpatchcmd{\@m@mschapter}% <cmd>
+%		{\@schapter}% <search>
+%		{\addtocontents{tuc}{\protect\settowidth{\protect\cftsectionindent}{\protect\cftchapterfont \thechapter.\space}}%
+%			\@schapter}% <replace>
+%		{}{}% <success><failure>
+%		\patchcmd{\M@sect}% <cmd>
+%		{\addcontentsline}% <search>
+%		{\addtocontents{tuc}{%
+%				\protect\settowidth{\csname cft#1numwidth\endcsname}{\csname cft#1font\endcsname\csname the#1\endcsname.\space}%
+%				\protect\setlength{\csname cftsub#1indent\endcsname}{\protect\dimexpr\csname cft#1numwidth\endcsname+\csname cft#1indent\endcsname}%
+%			}%
+%			\addcontentsline}% <replace>
+%		{}{}% <success><failure>
+%		\makeatother
 
 		%% delete boxes
-		\renewcommand\numberlinebox[2]{#2} % for sections
-		\renewcommand\chapternumberlinebox[2]{#2} % for chapters 
+%		\renewcommand\numberlinebox[2]{#2} % for sections
+%		\renewcommand\chapternumberlinebox[2]{#2} % for chapters 
 %		\renewcommand\partnumberlinebox[2]{#2} % for parts 
 
 		%% работа с расстояниями между точками, переносами слов

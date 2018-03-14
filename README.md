@@ -3,10 +3,6 @@
 
 Данная страница предназначена для авторов и редакторов книг, издаваемых в Санкт-Петербургском Политехническом университете Петра Великого (SPbPU) и отправляемых для индексации в Book Citation Index из Core Collection Web of Science (далее - издания SPbPU-BCI). 
 
-Проект SPbPU-BCI является адаптацией шаблона русскоязычных авторефератов и диссертаций Андрея Акиньшина:
-
-https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
-
 
 # Quick introduction
 
@@ -33,7 +29,12 @@ Ask questions on the web-page https://github.com/ParkhomenkoV/SPbPU-BCI-template
 ### Editors of Russian-Phd-LaTeX-Dissertation-Template
 
 Andrey Akinshin. 
-Other persons see, please, in Acknolegement.
+Some other persons see, please, in Acknolegement.
+
+Некоторые стилевые файлы проекта SPbPU-BCI адаптированы из файлов шаблона русскоязычных авторефератов и диссертаций Андрея Акиньшина:
+
+https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
+
 
 ### Code editors of SPbPU-BCI-template
 
@@ -42,16 +43,16 @@ Vladimir Parkhomenko
 
 ### Content editors of SPbPU-BCI-template
 
-Vladimir Parkhomenko
-Oleg Piskun
-Konstantin Shvetsov
+Vladimir Parkhomenko,
+Oleg Piskun,
+Konstantin Shvetsov,
 Alexander Schukin
 
 ### Useful remarks to the content of SPbPU-BCI-template
 
-Natalia Sokolova
-Viktoria Lisenko
-Svetlana Shutova
+Natalia Sokolova,
+Viktoria Lisenko,
+Svetlana Shutova,
 Alexander Vankovich
 
 

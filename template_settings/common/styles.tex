@@ -20,9 +20,36 @@
 %%% Подписи %%%
 \captionsetup{%
 singlelinecheck=off,                % Многострочные подписи, например у таблиц
-skip=2pt,                           % Вертикальная отбивка между подписью и содержимым рисунка или таблицы определяется ключом
+%skip=-20pt,                           % Вертикальная отбивка между подписью и содержимым рисунка или таблицы определяется ключом
 justification=centering            % Центрирование подписей, заданных командой \caption
 }
+
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
+%\captionwidth{\linewidth}
+%\normalcaptionwidth
+
+% для изменения отступов от floats (e.g. table,figure) & minipage
+\newlength{\mfloatsep}
+\setlength{\mfloatsep}{4mm plus 0.7mm minus 0.7mm} %3mm для A5
+
+% фиксируем расстояния с помощью пакета layouts
+\setlength{\textfloatsep}{\mfloatsep} % расстояние от текста до float, если float прижат к верхнему или нижнему краю
+\setlength{\floatsep}{\mfloatsep} % расстояние от float до float (если оба сверху/снизу)
+\setlength{\intextsep}{\mfloatsep} % расстояние от текста до float, если float снизу и сверху ограничен текстом 
+%
+%% фактически из-за бокса, внутрь которого помещается \captionof{figure} происходит увеличаение на 1мм отступа в соответствующем элементе!
+%
+%% по требованиям СПбПУ как раз необходим отступ 4мм от рисунка
+
+
+%Возможно более гибко задавать отступы, например:
+%\setlength{\floatsep}{12pt plus 2pt minus 2pt}
+%\setlength{\textfloatsep}{20pt plus 2pt minus 4pt}
+%\setlength{\intextsep}{\floatsep}
+
+
+
 
 %%% Парный к \smallA шрифт 13bp в подписи%%%
 %TO-DO как напрямую связать со \smallA
@@ -33,12 +60,19 @@ justification=centering            % Центрирование подписей
 
 %%% Рисунки %%%
 \DeclareCaptionLabelSeparator*{emdash}{~--- }             % (ГОСТ 2.105, 4.3.1)
+
 \captionsetup[figure]{labelsep=\figlabelsep,position=bottom,labelfont={it,font13bp},textfont={font13bp}}
 
-\setlength{\belowcaptionskip}{-2pt} %расстояние между 
+%\setlength{\belowcaptionskip}{0pt} %расстояние между 
 %\caption* -- подрисуночной подписи и
 %\caption  -- подписи к рисунку с номером
 %необходимо менять вслед за добавлением \vskip в \captionsetup
+
+%\setfloatadjustment{figure}{%
+%	\setlength{\belowcaptionskip}{-3pt}   % чтобы обивка после рисунков была 3mm, так как caption добавляет около 1мм к 3мм. 
+%}
+
+
 
 
 %%% Таблицы %%%
@@ -72,13 +106,13 @@ justification=centering            % Центрирование подписей
         \newcommand{\tabtitalign}{\raggedleft}   % по правому краю страницы или аналога parbox
     }{}
 
-    \DeclareCaptionFormat{tablecaption}{\tabcapalign #1#2\par%  % Идентификатор таблицы на отдельной строке
+    \DeclareCaptionFormat{tablecaption}{\tabcapalign #1#2\par %\hline  % Идентификатор таблицы на отдельной строке
         \tabtitalign{#3}}                                       % Наименование таблицы строкой ниже
     \captionsetup[table]{labelsep=\tablabelsep}                 % разделитель идентификатора с номером от наименования
 }
 \DeclareCaptionFormat{tablenocaption}{\tabcapalign #1\strut}    % Наименование таблицы отсутствует
 
-\captionsetup[table]{format=tablecaption,singlelinecheck=off,position=top,skip=0pt,labelfont={it,font13bp},textfont={bf,font13bp}}  % многострочные наименования и прочее
+\captionsetup[table]{format=tablecaption,singlelinecheck=off,position=top,labelfont={it,font13bp},textfont={bf,font13bp}}  % многострочные наименования и прочее
 \DeclareCaptionLabelFormat{continued}{Продолжение таблицы~#2}
 
 
@@ -224,15 +258,21 @@ justification=centering            % Центрирование подписей
 {}
 
 \theoremstyle{myplain} %improved plain style
-\newtheorem{thm}{Теорема}[chapter] % reset theorem numbering for each chapter
-\newtheorem{sqnc}{Следствие}[chapter] % definition numbers are 
-\newtheorem{propn}{Утверждение}[chapter] % definition numbers are dependent on theorem numbers
-\newtheorem{lmm}{Лемма}[chapter]
-
+\newtheorem{m-theorem}{Теорема}[chapter] % reset theorem numbering for each chapter
+\newtheorem{m-corollary}{Следствие}[chapter] % definition numbers are 
+\newtheorem{m-proposition}{Утверждение}[chapter] % definition numbers are dependent on theorem numbers
+\newtheorem{m-lemma}{Лемма}[chapter]
+\newtheorem{m-axiom}{Аксиома}[chapter]
 
 \theoremstyle{mydefinition} %improved definition style
-\newtheorem{exmp}{Пример}[chapter] % same for example numbers
-\newtheorem{defn}{Определение}[chapter]  % definition numbers are 
+\newtheorem{m-example}{Пример}[chapter] % same for example numbers
+\newtheorem{m-definition}{Определение}[chapter]  % definition numbers
+\newtheorem{m-condition}{Условие}[chapter]
+\newtheorem{m-problem}{Проблема}[chapter]
+\newtheorem{m-exercise}{Упражнение}[chapter]
+\newtheorem{m-question}{Вопрос}[chapter]
+\newtheorem{m-hypothesis}{Гипотеза}[chapter]
+\newtheorem{m-task}{Задание}[chapter]
 
 
 

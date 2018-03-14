@@ -1,0 +1,93 @@
+Для удобства авторов некоторые названия стандартных окружений приведены в таблице \ref{tab:enum-std}. В таблице \ref{tab:enum-spbpu}  перечислены имена специально разработанных окружений для пакетов SPbPU.
+
+% и примеры их оформления на псевдокоде (см. \cite{cite-spbpu-bci}).
+
+
+%https://tex.stackexchange.com/questions/2651/should-i-use-center-or-centering-for-figures-and-tables
+
+
+	\begin{table} [htbp]% Пример записи таблицы с номером, но без отображаемого наименования
+	\centering
+	\caption{Описание некоторых стандартных \LaTeX{} окружений, рекомендуемых к использования в шаблонах SPbPU}%
+	\label{tab:enum-std}
+		\begin{SingleSpace}
+		%		\resizebox{1\linewidth| &!| &
+		\begin{tabular}{|l|p{11cm}|} 
+			\hline
+			Название окружения&Назначение\\
+			\hline
+			\verb|center| & центрирование, аналог команды \verb|\centering|, но с добавлением нежелательного пробела, поэтому лучше избегать применения \verb|center|; \\
+			\verb|itemize| &{перечисления, в которых нет необходимости нумеровать  пункты, см. подробнее подраздел \ref{sec:strct-and-enum};}\\
+			\verb|enumerate| & перечисления с нумерацией, см. подробнее подраздел \ref{sec:strct-and-enum}; \\
+			\verb|refsection| & создание отдельных библиографических списков для глав; \\
+			\verb|tabular| & оформление таблиц; \\
+			\verb|table|   &{автоматическое перемещение по тексту таблиц, оформленных, например, с помощью \verb|tabular|, для минимизации пустых пространств;} \\
+			\verb|longtable| & оформление многостраничных таблиц; \\
+			\verb|tikzpicture| & создание иллюстраций с помощью пакета \verb|tikz| \cite{ctan-tikz}; \\
+			\verb|figure| &{автоматическое перемещение по тексту рисунков, оформленных например, с помощью \verb|tikz| или подключенных с помощью команды \verb|\includegraphics|, для минимизации пустых пространств;}\\
+			\verb|subfigure| & оформление вложенных рисунков в составе \verb|figure|; \\
+			\verb|algorithm| &{оформление псевдокода на основе пакета \verb|algorithm2e| \cite{ctan-algorithm2e};} \\
+			\verb|minipage| & {оформление рисунков и таблиц без функций автоматического перемещения по тексту для  минимизации пустых пространств;} \\
+			\verb|equation| & {оформление выключенных (не встроенных в текст с помощью \verb|$...$|) одиночных формул на одной строке;} \\
+			\verb|multilined| &{оформление выключенных (не встроенных в текст с помощью \verb|$...$|) одиночных формул в несколько строк;} \\ 
+			\verb|aligned| &{оформление нескольких формул с выравниванием по символу \verb|&|.} \\
+			\hline		
+		\end{tabular}	
+		%		}
+	\end{SingleSpace}
+	\end{table}
+
+На базе пакета \verb|tikz| разработано большое количество расширений \cite{ctan-tikz}, например, \verb|tikzcd|, которые мы рекомендуем использовать для оформления иллюстраций.
+
+	\begin{table} [htbp]% Пример записи таблицы с номером, но без отображаемого наименования
+	\centering
+	\caption{Описание специально разработанных \LaTeX{} окружений, рекомендуемых к использования в шаблонах SPbPU}%
+	\label{tab:enum-spbpu}
+	\begin{SingleSpace}
+		%		\resizebox{1\linewidth| &!| &
+		\begin{tabular}{|l|l|}
+			\hline
+			Название окружения & Текстово-графический объект\\
+			\hline
+			\verb|abstr|	 & реферат (abstract); \\
+			\verb|m-theorem| & теорема; \\ 
+			\verb|m-corollary| & следствие; \\
+			\verb|m-proposition| & утверждение; \\
+			\verb|m-lemma|   & лемма; \\
+			\verb|m-axiom| & аксиома; \\
+			\verb|m-example| & пример; \\
+			\verb|m-definition| &  определение; \\
+			\verb|m-condition| & условие;\\
+			\verb|m-problem| & проблема; \\
+			\verb|m-exercise| & упраженение;\\
+			\verb|m-question| & вопрос;\\
+			\verb|m-hypothesis| & гипотеза;\\
+			\verb|m-task| & задание. \\
+			\hline		
+		\end{tabular}	
+		%		}
+	\end{SingleSpace}
+\end{table}
+
+В случае, если авторам потребовалось новое окружение, то создать его можно в файле в файле \texttt{my\_fol\-der/{}my\_set\-tings.tex} согласно правилам, приведённым ниже.
+
+\begin{enumerate}[1.]
+	\item Для перехода в режим создания окружений следует указать:
+	\begin{itemize}
+		\item \verb|\theoremstyle{myplain}| --- окружения с доказательствами или аксиомами;
+		\item \verb|\theoremstyle{mydefinition}| --- окружения, не связанные с доказательствами или аксиомами.
+	\end{itemize}
+	\item В команде создания окружения следует ввести краткий псевдоним (\verb|m-new-env|) и отображаемое в pdf имя окружения (\verb|Название_окружения|):
+	\begin{itemize}
+		\item \texttt{\textbackslash{}newtheorem\{m-new-env-second\}\{Название\_окруже\-ния\}\-[chap\-ter]}.
+	\end{itemize}
+\end{enumerate}
+
+
+%\begin{m-new-env-first}
+%	Тест первого пользовательского окружения
+%\end{m-new-env-first}
+%
+%\begin{m-new-env-second}
+%	Тест второго пользовательского окружения
+%\end{m-new-env-second}

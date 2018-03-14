@@ -20,8 +20,7 @@
 %% для редких и/или длинных названий, например, алгоритмов необходимо задать правила переноса на нову строчку по слогам. Использовать в случае, если переносы работают не корректно.
 
 
-\input{template_settings/ch_epigraph} % keep unmodified
-
+\input{template_settings/ch_epigraph} % keep unmodified except for \label{ch-11} after paper acceptance
 	
 \begin{abstr}
 %%%%
@@ -30,11 +29,11 @@
 %%		
 %%  Пожалуйта, заполните информацию на английском
 %%		
-	Name SecondName Surname of First Author, title of the position, organization, a address, %
+	Name SecondName Surname of First Author, scientific degree, title of the position, organization, a address, %
 	\mailtoMLABSEDauthor{email@spbstu.ru}{Dear Author}{email@spbstu.ru}. 
 	%{true email}{email body}{represented email}
 	\par 
-	Name SecondName Surname of Second Author, title of the position, organization, a address, %
+	Name SecondName Surname of Second Author, scientific degree,  title of the position, organization, a address, %
 	\mailtoMLABSEDauthor{email@spbstu.ru}{Dear Author}{email@spbstu.ru}. 
 	%{true email}{email body}{represented email}
 	\par
@@ -57,9 +56,9 @@
 %%		
 %%  Пожалуйта, заполните информацию на русском
 %%	
-	Имя Отчество Фамилия первого автора, должность, организация, адрес, \mailtoMLABSEDauthor{email@spbstu.ru}{Dear Author}{email@spbstu.ru}. %{true email}{email body}{represented email}
+	Имя Отчество Фамилия первого автора, степень, должность, организация, адрес, \mailtoMLABSEDauthor{email@spbstu.ru}{Dear Author}{email@spbstu.ru}. %{true email}{email body}{represented email}
 	\par
-	Имя Отчество Фамилия второго автора, должность, организация, адрес, \mailtoMLABSEDauthor{email@spbstu.ru}{Dear Author}{email@spbstu.ru}. %{true email}{email body}{represented email}
+	Имя Отчество Фамилия второго автора, степень, должность, организация, адрес, \mailtoMLABSEDauthor{email@spbstu.ru}{Dear Author}{email@spbstu.ru}. %{true email}{email body}{represented email}
 	\par
 	{\normalfont \abstractname.} Текст аннотации на русском (минимум 70 и максимум 150 слов).   
 	\par
@@ -73,7 +72,7 @@
 %%%%
 %%	Bibliography	
 %%		
-	\begin{refsection}[my_folder/my_biblio.bib] %it is better to rename <<my_biblio>>-file
+	\begin{refsection}[my_folder/my_biblio.bib] % keep unmodified (or rename <<my_biblio>> everywere if you can)
 		
 	\newrefcontext[labelprefix=\thechapter.] % keep unmodified
 
@@ -84,347 +83,143 @@
 %%  For non-Russian authors the text of titles of sections in Russian can be submitted as-is and translated by editors. 
 %%  
 	
-	\section*{Введение} \label{sect1_1}
-	
-Текст введения должен отличаться от текста аннотации.
+	\section*{Введение} \label{ch-11:intro}
 
+Текст введения должен отличаться от текста аннотации. В тексте введения освещают такие элементы глав (статей), как
 
+\begin{itemize}
+	\item мотивация (в т.ч. описывается решаемая проблема);
+	\item новизна;
+	\item структура статьи (главы).
+\end{itemize}
 
-	\section{Название подраздела} \label{sect1_2} %название по-русски
+Глава (статья) обязательно должна иметь обзор литературы по соответствующей тематике. Выбор места приведения обзора зависит от характера работы и стиля изложения материала. Приветствуются ссылки на литературу при изложении материала, в том числе на работы, которые цитируются в Web of Science (далее --- WoS) и Scopus.
+
+Текст данного шаблона (главы/статьи) призван привести \textit{краткие} примеры оформления текстово-графических объектов. Более подробные примеры можно посмотреть в рекомендациях авторам и редакторам по оформлению главы (статьи) для книг, отправляемых на индексацию в Clarivate Analytics для индексирования в Book Citation Index из WoS Core Collection \cite{spbpu-bci-template-author-guide}. В рекомендациях приведены ссылки на учебно-справочные материалы \LaTeX{} (под \LaTeX{} в документе может подразумеваться также \TeX, \LaTeXe).
+
+Шаблон содержит несколько разделов, чтобы проиллюстрировать правила нумерации текстово-графических объектов. Большинство правил оформления отразилось в pdf-файле автоматически, так как он был получен на основе настроек \LaTeX-документа. В случае использования средств \LaTeX{} \emph{необходимо использовать только тот шаблон} \LaTeX, который размещён по ссылкам: 
+\begin{itemize}
+	\item \cite{spbpu-bci-template} --- электронная версия на сайте шаблона;
+	\item \cite{spbpu-bci-template-zip} --- zip-архив с шаблоном.
+\end{itemize}
+
+Авторам, использующим \LaTeX{} необходимо последовательно заменять текст шаблона в файле <<\verb|my_content.tex|>> на текст своей главы (статьи), избегая при этом ошибок (errors) при компиляции основного файла <<\verb|my_chapter.tex|>>. Синтаксические конструкции \LaTeX, которые задействованы в формировании того или иного текста выделены \texttt{машинописным шрифтом}.
+
+	\section{Название подраздела} \label{ch-11:title-abbr} %название по-русски
 	\addtocru{section}{Название подраздела} %повторите название по-русски
 	\addtocen{section}{Section title} % title in english 
+
+
+Одиночные формулы оформляют в окружении \texttt{equation}, например, как указано в следующей одиночной нумерованной формуле:
 	
+	\begin{equation}
+	\label{eq:Pi}
+	 \pi \approx 3,141.
+	\end{equation}
+
+%%%%
+%%		
+%%  \input{...} commands are used only to sychronize some parts of the text with the author guide. Authors are free to type the text directly in ch_content.tex   
+%%  \input{...} комманды используются только, чтобы синхронизировать части текта с рекомендациями авторам. Авторы  вольны вносить текст непосредственно в файл ch_content.tex  
+%%  
+
+	
+\input{my_folder/tex/eq-Galois} % пример двух выравнивания двух формул в окружении align
 
 
-	Все формулы, размещенные в отдельных строках, подлежат нумерации, например как формулы \eqref{eq-UpArrow-G} и \eqref{eq-DownArrow-G} \cite{Ganter1999}. 
-	\begin{align}
-	\label{eq-UpArrow-G}
-	& A\uA =  \{ m\in{}M\:|\:gIm\:\forall  g \in{} A \}; \\ 
-	\label{eq-DownArrow-G}
-	& B\dA =  \{ g\in{}G\:|\:gIm\:\forall  m \in{} B \}.
-	\end{align}
-
-
-%	Одиночные формулы оформляют в окружение equation.
-%	
-%	\begin{equation}
-%	\label{eq-Reflexivity}
-%	a = a
-%	\end{equation}
-
-
+На рисунке \ref{fig:spbpu-new-bld-autumn} приведёна фотография Нового научно-исследовательского корпуса СПбПУ.
 
 	\begin{figure}[ht] 
 	\center
 	\includegraphics [scale=0.27] {my_folder/images/spbpu_new_bld_autumn}
-	\caption{Новый научно-исследовательский корпус СПбПУ} 
-	\label{img:latex1_1}  
+	\caption{Новый научно-исследовательский корпус СПбПУ \cite{spbpu-gallery}} 
+	\label{fig:spbpu-new-bld-autumn}  
 	\end{figure}
+	
+
+
+	\input{my_folder/tex/tab-toy-context} % таблица с примером из \cite{Peskov2004}	
 
 	
-	\begin{table} [htbp]% Пример записи таблицы с номером, но без отображаемого наименования
-		\centering
-		\caption{Пример задания обучающей структуры из \cite{Peskov2004}}%
-		\label{tab-ToyCompare-Peskov}		\begin{SingleSpace}
-			%		\resizebox{1\linewidth}{!}{
-			\begin{tabular}{|l|l|l|l|l|l|}
-				\hline
-				$G$&$m_1$&$m_2$&$m_3$&$m_4$&$K$\\
-				\hline
-				$g_1$&0&1&1&0&1\\
-				$g_2$&1&2&0&1&1\\
-				$g_3$&0&1&0&1&1\\
-				$g_4$&1&2&1&0&2\\
-				$g_5$&1&1&0&1&2\\
-				$g_6$&1&1&1&2&2\\
-				\hline		
-			\end{tabular}	
-			%		}
-		\end{SingleSpace}
-	\end{table}
-		
-	
-	
-	
-	\section{Название подраздела} \label{sect1_3} %название по-русски
+	\section{Название подраздела} \label{ch-11:sec-abbr} %название по-русски
 	\addtocru{section}{Название подраздела} %повторите название по-русски
 	\addtocen{section}{Section title} % title in english 
 	
 	
-	
-	Название подраздела (на английском команда section) выносится в Содержание с абзацным отступом по ширине (или отступом, равным длине нумерационной части с пробелом). В терминологии ГОСТов название главы является разделом (на английском команда chapter). Отступ перед и после текста подраздела: 2 строки.
-	
+Название подраздела оформляется с помощью команды \verb|\section{...}|. В терминологии ГОСТов название главы является разделом (в \LaTeX{} команда \verb|\chapter{...}|). Для переноса названий структурных элементов глав (статей) в русское и английское содержание необходимо использовать команды \verb|\addtocru{element}{Название_на_русском}| и \verb|\addtocen{element}{Title_in_english}| соответственно, где под \verb|element| имеется в виду название структурного элемента издания, например, \verb|chapter|, \verb|section|.
 	
 
 	
-	\subsection{Название параграфа} \label{sect1_3_1} %название по-русски
+
+	\subsection{Название параграфа} \label{ch-11:subsec-title-abbr} %название по-русски
 	\addtocru{subsection}{Название параграфа} %повторите название по-русски
 	\addtocen{subsection}{Paragraph title} % title in english 
 	
 	
-	Название параграфа (на английском команда subsection)  выносится в Содержание с двумя абзацными отступами по ширине. Отступ перед и после текста: 1 строка. 
+Название параграфа оформляется с помощью команды  \texttt{\textbackslash{}subsection\{...\}}.
 	
-	
-		
-	\subsubsection{Название подпараграфа} \label{sect1_3_1_1} %название по-русски
+			
+	\subsubsection{Название подпараграфа} \label{ch-11:subsubsec-title-abbr} %название по-русски
 	\addtocru{subsubsection}{Название подпараграфа} %повторите название по-русски
 	\addtocen{subsubsection}{Subparagraph title} % title in english 
 	
 	
+Название подпараграфа оформляется с помощью команды  \texttt{\textbackslash{}subsubsecti\-on\{...\}}.
+
+
+
+\input{my_folder/tex/enumeration} % правила использования перечислений	
+
+	
+Оформление псевдокода необходимо осуществлять с помощью пакета \verb|algorithm2e| в окружении \verb|algorithm|. Данное окружение интерпретируется в шаблоне как рисунок. Пример оформления псевдокода алгоритма приведён на рисунке \ref{alg:AlgoFDSCALING}. 
 	
 	
-	Название подпараграфа (на английском subsubsection) переносится в содержание на усмотрение редакторов. Названия ненумеруемых подразделов {\itshape Введение, Выводы и Библиографический список} не выносятся в содержание.  Отступ перед и после текста: 1 строка.
+\input{my_folder/tex/pseudocode-agl-DTestsFDScaling} % пример оформления псевдокода алгоритма 	
+
 	
-	Когда есть необходимость ссылки в тексте документа на одно из перечислений и как правило {\itshape после параграфа или подпараграфа}, можно использовать нумерованные списки с иерархией.
-	\begin{enumerate}
-		\item Первый пункт.
-		\item Второй пункт.
-		\item По ГОСТ 2.105 первый уровень нумерации идёт буквами русского или латинского алфавитов ({\itshape для определенности выбираем английский алфавит}),
-		а второй "--- цифрами. 
-		\begin{enumerate}
-			\item В данном пункте лежит следующий нумерованный список: 
-			\begin{enumerate}
-				\item первый пункт;
-				\item третий уровень нумерации не нормирован ГОСТ 2.105 ({\itshape для определенности выбираем английский алфавит});
-				\item обращаем внимание на строчность букв в этом нумерованном и следующем маркированном списке:
-				\begin{itemize}
-					\item первый пункт маркированного списка.
-				\end{itemize}    
-			\end{enumerate}
-		\end{enumerate}
-		\item Четвёртый пункт верхнего уровня перечисления.
-	\end{enumerate}
-	
-	
-	
-	Оформление псевдокода необходимо осуществлять с помощью пакета \verb|algorithm2e|, следуя настройкам вывода, приведённым в примере (псевдокод оформляется как рисунок).
-	
-	
-	\begin{algorithm} %[h]
-		\SetKwFunction{algoDTestsFDSCALING}{} 
-		\SetKwProg{myalg}{Algorithm}{}{} %write in 2nd agrument <<Algorithm>>, <<Procedure>> etc
-		\nonl\myalg{\algoDTestsFDSCALING}{
-			\KwInput{the many-valued context $\cont[M]\eqdef(G,M,W,J)$, the class membership $\epsilon: G\to K$} 
-			\KwOutput{positive and negative binary contexts $\overbar{\cont[K]_+}\eqdef(\overbar{G_+},M,I_+)$, $\overbar{\cont[K]_-}\eqdef(\overbar{G_-},M,I_-)$ such that i-tests found in $\overbar{\cont[K]_+}$ are diagnostic tests in $\cont[M]$, and objects from $\overbar{\cont[K]_-}$ are counter-examples} %последние строки формируют начальное множество диагностических тестов
-			\For {$\forall g_i,$ $g_j \in G$\label{FD-scaling-step-first}}{
-				%(\tcp*[f]{possible inlined comment})
-				\If{$i < j$ }{
-					$\overbar{G} \leftarrow (g_i,g_j)$\;
-				}
-			}
-			%		$M\leftarrow M\setminus k$\;
-			\For {$\forall (g_i,g_j)\in \overbar{G}$}{
-				%(\tcp*[f]{possible inlined comment})
-				\If{$m(g_i) = m(g_j)$ }{ %на самом деле здесь цикл по всем компонентам вектора-строки
-					$(g_i,g_j) I m$\; % or setI() function
-				}
-				\uIf{$\epsilon(g_i) = \epsilon(g_j)$ }{
-					$\overbar{G_+} \leftarrow (g_i,g_j)$\;
-				}
-				\lElse{$\overbar{G_-} \leftarrow (g_i,g_j)$\label{FD-scaling-step-last}}	
-			}		
-			$I_+= I\cap (\overbar{G_+}\times M)$, $I_-= I\cap (\overbar{G_-}\times M)$\label{FD-scaling-step-newK}\; 
-			\For {$\forall \overbar{g_+}\in \overbar{G_+}$, $\forall \overbar{g_-}\in \overbar{G_-}$ }{
-				\If{$\overbar{g_+}\uA \subseteq \overbar{g_-}\uA$ }{
-					$\overbar{G_+} \leftarrow \overbar{G_+} \setminus \overbar{g_+}$\;
-				}
-			}
-			%		\Return \;
-		}
-		\caption{Псевдокод алгоритма \texttt{DiagnosticTestsScalingAndInferring} \cite{Naidenova2017}}\label{Alg-AlgoFDSCALING}
-		% example of adding an item to Index
-		% \index for accepted papers only
-		\index[ru]{алгоритм! \texttt{название\_алгоритма}} 
-		% key words <<алгоритм>> и <<algorithm>> keep unmodified
-		\index[en]{algorithm! \texttt{algorighm\_title}}
-		% authors can used the key word <<процедура>> (procedure) и т.п.
-		%
-		%
-	    % another example:
-		\index[ru]{алгоритм! \texttt{DiagnosticTestsScaling- AndInferring}}  %ключевые слова <<алгоритм>> и <<algorithm>> не менять
-		\index[en]{algorithm! \texttt{DiagnosticTestsScaling- AndInferring}} 
-	\end{algorithm} 
-	
-	% another example of adding an arbitrary keyword to Index
-	% some useful keywords: theorem, proposition, lemma, equation etc
-	% please, use short keywords (2-3 max)
-	\index[ru]{длинное-название-возможное-например-на-немецком} % длинные названия первого уровня как правило запрещены
-	\index[en]{long-title-possible-for-example-in-German} 
-	
-	Обратим внимание, что можно сослаться на строчку \ref{FD-scaling-step-first} псевдокода. 
-	
-	
-	
-	\section{Название подраздела} \label{sect1_4} %название по-русски
+	\section{Название подраздела} \label{ch-11:sec-very-short-title} %название по-русски
 	\addtocru{section}{Название подраздела} %повторите название по-русски
 	\addtocen{section}{Section title} % title in english  
 
+
 	
-	Формулы могут быть размещены в несколько строк. Чтобы выставить номер формулы напротив средней строки, используйте окружение \verb|multlined| из пакета \verb|mathtools| вместо \verb|multline| следующим образом \cite{Ganter1999}:
+\input{my_folder/tex/eq-equation-multilined} % пример оформления одиночной формулы в несколько строк
 
-\begin{equation} % \tag{S} % tag - вписывает свой текст 
-\label{eq-fConcept-order-G}
-\begin{multlined}
-(A_1,B_1)\leq (A_2,B_2)\; \Leftrightarrow \\  \Leftrightarrow\; A_1\subseteq A_2\; \Leftrightarrow \\ \Leftrightarrow\; B_2\subseteq B_1. 
-\end{multlined}
-\end{equation}
+\input{my_folder/tex/fig-spbpu-sc-four-in-one} % пример подключения 4х иллюстраций в одном рисунке
 
-
-Используя команду \verb|\labelcref| из пакета \verb|cleveref|, допустимо следующим образом оформлять ссылку на несколько формул:
-(\labelcref{eq-UpArrow-G,eq-DownArrow-G,eq-fConcept-order-G}).
+%\input{my_folder/tex/fig-spbpu-whitehall-three-in-one} % пример подключения 3х иллюстрации в одном рисунке
+%
+%\input{my_folder/tex/fig-spbpu-main-bld-two-in-one} % пример подключения 2х иллюстраций в одном рисунке
 
 
+\input{my_folder/tex/tab-more-than-one-page} % пример подключения таблицы на несколько страциц
 
 
-\begin{figure}[ht]
-	\adjustbox{minipage=1.3em,valign=t}{\subcaption{}\label{sfig:testa}}%
-	\begin{subfigure}[t]{\dimexpr.5\linewidth-1.3em\relax}
-		\centering
-		\includegraphics[width=.95\linewidth,valign=t]{my_folder/images/spbpu_sc_system}
-	\end{subfigure}
-\hfill %выровнять по ширине
-	\adjustbox{minipage=1.3em,valign=t}{\subcaption{}\label{sfig:testb}}%
-	\begin{subfigure}[t]{\dimexpr.5\linewidth-1.3em\relax}
-		\centering
-		\includegraphics[width=.95\linewidth,valign=t]{my_folder/images/spbpu_sc_refr}
-	\end{subfigure}
-\\[20pt]
-	\adjustbox{minipage=1.3em,valign=t}{\subcaption{}\label{sfig:testc}}%
-\begin{subfigure}[t]{\dimexpr.5\linewidth-1.3em\relax}
-	\centering
-	\includegraphics[width=.95\linewidth,valign=t]{my_folder/images/spbpu_sc_hall}
-\end{subfigure}%
-\hfill %выровнять по ширине
-\adjustbox{minipage=1.3em,valign=t}{\subcaption{}\label{sfig:testd}}%
-\begin{subfigure}[t]{\dimexpr.5\linewidth-1.3em\relax}
-	\centering
-	\includegraphics[width=.95\linewidth,valign=t]{my_folder/images/spbpu_sc_box}
-\end{subfigure}
-\captionsetup{justification=centering} %центрировать
-\caption{Фотографии суперкомпьютерного центра СПбПУ \cite{spbpu_site}: {\itshape a} --- система хранения данных и узлы NUMA-вычислителя; {\itshape b} --- холодильные машины на крыше научно-исследовательского корпуса; {\itshape c} --- машинный зал; {\itshape d} --- элементы вычислительных устройств} 
-\label{Fig:complexABCD}
-\end{figure}
+\input{my_folder/tex/rules-theorem-like-expressions} 
 
-Далее можно ссылаться на рисунок \ref{sfig:testa}, \ref{sfig:testb}, \ref{sfig:testc}, \ref{sfig:testd} и рисунок \ref{Fig:complexABCD} в целом.
+По аналогии с нумерацией формул, рисунков и таблиц нумеруются и иные текстово-графические объекты, то есть включаем в нумерацию номер главы, например: теорема 3.1. для первой теоремы третьей главы монографии. Команды \LaTeX{} выставляют нумерацию и форматирование автоматически. Полный перечень команд для подготовки текстово-графических и иных объектов находится в подробных методических рекомендациях \cite{spbpu-bci-template-author-guide}. 
 
 
-
-Приведём пример длинной таблицы с записью продолжения на следующей странице.
-\begingroup
-\centering
-\smallA %выставляем шрифт в 13bp
-\begin{longtable}[c]{|l|l|l|l|l|l|}
-	\caption{Пример задания обучающей структуры из \cite{Peskov2004} (с повтором для переноса таблицы на новую страницу)}%
-	\label{tbl:test5}% label всегда желательно идти после caption
-	\\
-	\hline
-	$G$&$m_1$&$m_2$&$m_3$&$m_4$&$K$\\ \hline
-	\endfirsthead%
-	\captionsetup{format=tablenocaption,labelformat=continued}% должен стоять до самого caption
-	\caption[]{}\\
-	\hline
-	$G$&$m_1$&$m_2$&$m_3$&$m_4$&$K$\\ \hline
-	\endhead
-	\hline
-	\endfoot
-	\hline
-	\endlastfoot
-	$g_1$&0&1&1&0&1\\
-	$g_2$&1&2&0&1&1\\
-	$g_3$&0&1&0&1&1\\
-	$g_4$&1&2&1&0&2\\
-	$g_5$&1&1&0&1&2\\
-	$g_6$&1&1&1&2&2\\
-	\hline
-	$g_1$&0&1&1&0&1\\
-	$g_2$&1&2&0&1&1\\
-	$g_3$&0&1&0&1&1\\
-	$g_4$&1&2&1&0&2\\
-	$g_5$&1&1&0&1&2\\
-	$g_6$&1&1&1&2&2\\
-	\hline
-	$g_1$&0&1&1&0&1\\
-	$g_2$&1&2&0&1&1\\
-	$g_3$&0&1&0&1&1\\
-	$g_4$&1&2&1&0&2\\
-	$g_5$&1&1&0&1&2\\
-	$g_6$&1&1&1&2&2\\
-		\hline
-	$g_1$&0&1&1&0&1\\
-	$g_2$&1&2&0&1&1\\
-	$g_3$&0&1&0&1&1\\
-	$g_4$&1&2&1&0&2\\
-	$g_5$&1&1&0&1&2\\
-	$g_6$&1&1&1&2&2\\
-	\hline
-	$g_1$&0&1&1&0&1\\
-	$g_2$&1&2&0&1&1\\
-	$g_3$&0&1&0&1&1\\
-	$g_4$&1&2&1&0&2\\
-	$g_5$&1&1&0&1&2\\
-	$g_6$&1&1&1&2&2\\
-\end{longtable}
-\normalsize% возвращаем шрифт к нормальному
-\endgroup
-\normalsize% возвращаем шрифт к нормальному
+%\input{my_folder/tex/rules-list-of-environments} % список некоторых окружений
 
 
+\input{my_folder/tex/theorem-example} %пример оформления теоремы
 
 
-Вопросы форматирования текста и окружения не регламентированы ГОСТ 2.105--95, поэтому предлагаем придерживаться следующих правил.
-\textbf{Полужирный текст} рекомендуем использовать только для названия разделов и подразделов, а также стандартных окружений, например, \textbf{Определение}, \textbf{Теорема}, \textbf{Пример}, \textbf{Лемма}, \textbf{Аннотация}.
+\input{my_folder/tex/definition-example} %пример оформления определения
 
-
-\textit{Курсив} рекомендуем использовать только для выделения переменных в формулах, служебной информации об авторах главы (статьи), важных терминов, представляемых по тексту, а также для всего тела окружений, связанных с получением новых существенных результатов и их доказательством: Теорема, Лемма, Следствие, Утверждение и другие.
-
-Окружения нумеруем по аналогии с нумерации формул, рисунков и таблиц, то есть включаем в нумерацию номер главы, например:
-теорема 3.1. для первой теоремы третьей главы монографии.  
-
-
-
-\begin{thm}[о неполноте] %при необходимости в [] можно записать название теоремы или убрать его
-	\label{th-ex} 
-	% \index только для принятых работ
-	% шаблон записи теоремы в Предметный указатель
-	\index[ru]{теорема! название\_теоремы или о чём} %ключевое слово <<теорема>> не менять
-	\index[en]{theorem! 1-3 words for detail or description}
-	% пример записи алгоритма в Предметный указатель
-	\index[ru]{теорема! о неполноте}
-	\index[en]{theorem! about incompleteness}
-	% пример записи алгоритма в Предметный указатель
-	\index[ru]{теорема! о жизни}
-	\index[en]{theorem! about life}
-	Текст теоремы полностью выделен курсивом. Допустимо математические символы не выделять курсивом, если это искажает их значения. Используется абзацный отсуп, так как ``Абзацы в тексте начинают отступом'' в соответствии с ГОСТ 2.105--95. Название теоремы допустимо убрать.
-\end{thm}
-Доказательство теоремы \ref{th-ex}, леммы, утверждений, следствий и других завершаем символом белого квадрата (номер символа в Юникод 25A1) без выравнивания по правому краю. $\square$
-
-Тело доказательства не выделяется курсивом.
-Тело следующих окружений также не выделяется сплошным курсивом: Определение, Условие, Проблема, Пример, Упражнение, Вопрос, Аксиома, Гипотеза и другие.
-
-\begin{defn}[хороший и-тест] %при необходимости в [] можно записать название определения или убрать его
-	\label{def-ex}
-	% \index только для принятых работ
-	% шаблон записи определения в Предметный указатель 
-	\index[ru]{название\_определения! 1-3 уточняющих слова или~ничего}
-	\index[en]{definition\_title! 1-3 words for detail or~without "!-part}
-	% пример записи определения в Предметный указатель 
-	\index[ru]{и-тест! хороший! наилучший}
-	\index[en]{i-test! good! best}
-	% пример записи определения в Предметный указатель 
-	\index[ru]{и-тест! замкнутый}
-	\index[en]{i-test! closed}
-	Текст определения, в котором только {\itshape важный термин} выделен курсивом, но можно было его и не выделять курсивом.
-\end{defn}
 
 
 % пример повторной ссылки на алгоритм для записи упоминанаия определения в Предметный указатель на другой странице 
-\index[ru]{алгоритм! \texttt{DiagnosticTestsScaling- AndInferring}} %нужен ручной перенос из-за ошибки в MakeIndex %ключевые слова <<алгоритм>> и <<algorithm>> не менять
-\index[en]{algorithm! \texttt{DiagnosticTestsScaling- AndInferring}} %нужен ручной перенос из-за ошибки в MakeIndex
+\index[ru]{алгоритм!\texttt{DiagnosticTestsScaling\-AndInferring}} %нужен ручной перенос \- из-за ошибки в MakeIndex для команды \texttt
+%ключевые слова <<алгоритм>> и <<algorithm>> не менять
+\index[en]{algorithm!\texttt{DiagnosticTestsScaling\-AndInferring}} %нужен ручной перенос \- из-за ошибки в MakeIndex для команды \texttt
 
 
-\section*{Выводы} \label{sect1_5}
+\section*{Выводы} \label{ch-11:conclusion}
 
-Текст заключения ко второй главе. Пример ссылок \cite{Article,Book,Booklet,Conference,Inbook,Incollection,Manual,Mastersthesis,Misc,Phdthesis,Proceedings,Techreport,Unpublished,badiou:briefings}.
+Текст заключения ко второй главе. Пример ссылок \cite{Article,Book,Booklet,Conference,Inbook,Incollection,Manual,Mastersthesis,Misc,Phdthesis,Proceedings,Techreport,Unpublished,badiou:briefings}, а также ссылок с указанием страниц, на котором отображены те или иные текстово-графические объекты  \cite[с.~96]{Naidenova2017} или в виде мультицитаты на несколько источников \cites[с.~96]{Naidenova2017}[с.~46]{Ganter1999}. Часть библиографических записей носит иллюстративный характер и не имеет отношения к реальной литературе.
+
 
 \section*{Библиографический список}
 \FloatBarrier % make floats stop

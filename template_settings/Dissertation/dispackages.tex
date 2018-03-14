@@ -84,7 +84,7 @@
 	%	\fi
 	%  \begin{otherlanguage}{russian}
 	\chapter*{%
-		\normalfont\MakeUppercase{Content} %слово <<Содержание>> в стилю chaperLight, по факту убираем \bfseries
+		\normalfont\MakeUppercase{Содержание} %слово <<Содержание>> в стилю chaperLight, по факту убираем \bfseries
 		%		    \contentsname
 		%		    \@mkboth{\MakeUppercaseСодержание}
 		%		            {\MakeUppercaseСодержание}%
@@ -95,11 +95,13 @@
 	%  \end{otherlanguage}
 	%	\if@restonecol\twocolumn\fi
 }
-%\newcommand{\addetoc}[2]{%
-%	%	\addcontentsline{toc}{#1}{\protoct\numberline{\csname the#1\endcsname}#2}%
-%	\addcontentsline{toc}{#1}{#2}%
+\newcommand{\addetoc}[2]{%
+		\addcontentsline{toc}{#1}{\protect\numberline{\csname the#1\endcsname}#2}%
+}
+%\newcommand{\addtocru}[2]{%
+%	\addcontentsline{tuc}{#1}{\protect\numberline{\csname the#1\endcsname}#2}%
+%	%	\addcontentsline{tuc}{#1}{#2}%
 %}
-
 
 %\makeatother
 

@@ -141,6 +141,9 @@
 %    \IfFileExists{pscyr.sty}{}{}  % Красивые русские шрифты
 %\fi
 
+%https://tex.stackexchange.com/questions/8260/what-are-the-various-units-ex-em-in-pt-bp-dd-pc-expressed-in-mm
+\usepackage{printlen} %для измерения и вывода параменторов шрифтов, отступов, интервалов
+
 \usepackage{bm} %для жирных начертаний символов
 
 \usepackage{csquotes} %to check quotes
@@ -155,7 +158,15 @@
 
 %%% Таблицы %%%
 \usepackage{longtable}                              % Длинные таблицы
-\usepackage{multirow,makecell}                      % Улучшенное форматирование таблиц
+\usepackage{multirow,makecell}                      % Улучшенное форматирование таблиц:
+													% multirow - строки на несколько ячеек, 
+												
+													% makecell - сесколько строк в ячейке.
+													% не работает, если внутри, например, \verb|text| -> \texttt{text}
+													% аналоги
+%https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell								
+						
+													
 
 %%% Общее форматирование
 \usepackage{soulutf8}                               % Поддержка переносоустойчивых подчёркиваний и зачёркиваний
@@ -206,6 +217,8 @@ title={\chapterLight{}
 %\makeatother
 
 
+%%% Фиксация плавающих объектов
+
 
 
 
@@ -217,7 +230,7 @@ title={\chapterLight{}
 \usepackage{graphicx}[2014/04/25]                   % Подключаем пакет работы с графикой
 
 %%% Списки %%%
-\usepackage{enumitem}
+\usepackage[shortlabels]{enumitem} % shortlabels для того, чтобы изменять токены в списках с дефолтных (иерархическая структура) на произвольныею
 
 %%% Подписи %%%
 \usepackage{caption}[2013/05/02]                    % Для управления подписями (рисунков и таблиц) % Может управлять номерами рисунков и таблиц с caption %Иногда может управлять заголовками в списках рисунков и таблиц
