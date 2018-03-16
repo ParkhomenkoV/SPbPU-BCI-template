@@ -53,7 +53,9 @@ Alexander Schukin
 Natalia Sokolova,
 Viktoria Lisenko,
 Svetlana Shutova,
-Alexander Vankovich
+Tamara Naumova,
+Alexander Vankovich,
+Tatiana Baboshina
 
 
 ## Acknowledgement
