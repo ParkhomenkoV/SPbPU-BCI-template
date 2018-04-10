@@ -9,10 +9,17 @@
 %%  
 %%
 
-%%%%%%%%% FAST COMPILATION
+%%%%%%%%%%%%%%%%%%%%% FAST COMPILATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% To create a dump run once
+%   pdftex -ini -jobname="precompiled" -interaction=nonstopmode "&pdflatex" mylatexformat.ltx   my_chapter.tex
+% then the follwonig command use this dump. The command can be ran after each modification. If the static part is modified, the previous command should also be run
+%   latexmk -halt-on-error -pdf -pdflatex="pdflatex --shell-escape -fmt precompiled --synctex=1 -interaction=nonstopmode"  -jobname=my_chapter my_chapter.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % -------------------------------------------------------------------
 % Loading static part of the preamble if not precompield
 % -------------------------------------------------------------------
+
 
 % checking if \enofdump is known if not defining it as an empty macro
 \expandafter\ifx\csname endofdump\endcsname\relax\def\enofdump{}\fi
