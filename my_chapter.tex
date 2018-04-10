@@ -1,3 +1,4 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% This is the main file for a chapter from the SPbPU-BCI template  %%%%
 %%
 %%   The following settings files are deeply modified files of 
@@ -7,9 +8,39 @@
 %%   Please, write feedback on the web-page https://github.com/ParkhomenkoV/SPbPU-BCI-template/issues.
 %%  
 %%
-\input{template_settings/ch_preamble} % please, keep unmodified
+
+%%%%%%%%%%%%%%%%%%%%% FAST COMPILATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% To create a dump run once
+%   pdftex -ini -jobname="precompiled" -interaction=nonstopmode "&pdflatex" mylatexformat.ltx   my_chapter.tex
+% then the follwonig command use this dump. The command can be ran after each modification. If the static part is modified, the previous command should also be run
+%   latexmk -halt-on-error -pdf -pdflatex="pdflatex --shell-escape -fmt precompiled --synctex=1 -interaction=nonstopmode"  -jobname=my_chapter my_chapter.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -------------------------------------------------------------------
+% Loading static part of the preamble if not precompield
+% -------------------------------------------------------------------
 
 
+% checking if \enofdump is known if not defining it as an empty macro
+\expandafter\ifx\csname endofdump\endcsname\relax\def\enofdump{}\fi
+
+% defining \if for check if there is name and loading the preamble if necessary
+% http://tex.stackexchange.com/questions/15604/how-to-speed-up-pdflatex-for-a-very-large-document-on-macos-x
+%\def\ifundefined#1{\expandafter\ifx\csname#1\endcsname\relax}
+\makeatletter
+\@ifundefined{preambleloaded}{
+	\def\preambleloaded{Precompiled preamble loaded.}
+	\typeout{PRECOMILED PREAMBLE NOT LOADED}
+	\input{template_settings/ch_static_preamble} % please, keep unmodified
+}{
+	\typeout{\preambleloaded}
+}
+\makeatother
+\endofdump
+
+\input{template_settings/ch_dynamic_preamble} % please, keep unmodified
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Author settings
 %%   Please, see all possible packages using the search in files of ch_preamble. 
 %%   Command \newpackage can be written only after a technical editor's approvement.

@@ -75,3 +75,10 @@ Call for chapters MLABSED-2017.tex
 *.tuc
 *.doc
 *.docx
+
+# From fast build and latex make
+*~
+*.mtc0
+*.fmt
+*.fls
+*_latexmk

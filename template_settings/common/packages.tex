@@ -174,40 +174,6 @@
 
 
 
-%%% Предметный указатель  ГОСТ 7.78-99 Index %%%
-%c обобщенными рубриками или развернутый
-%или указатель терминов (в общем случае - произвольное число указателей)
-%подключать до hyperref
-
-%\usepackage{makeidx} %возможно, необходимо подключить И/ИЛИ пройти Tools-> Commands -> MakeIndex
-
-\usepackage{imakeidx} 
-%\indexsetup{level=\section*,toclevel=section,noclearpage}
-\makeindex[program=makeindex,
-options=-s template_settings/common/myindex.ist, %подключаем стилевой файл для форматирования вывода
-name=ru, % префикс для русских указателей 
-% если убрать <<ru>>, то для работы дефолтового придется вручную включать Tools-> Commands -> MakeIndex
-title={\chapterLight{} 
-%   \hrule{}
-	Предметный указатель
-%	\hrule{}
-} 
-%,columns=1 %по умолчанию 2
-]
-\makeindex[program=makeindex,
-options=-s template_settings/common/myindex.ist, %подключаем стилевой файл для форматирования вывода
-name=en, % префикс для английских указателей
-title={\chapterLight{}
-%	\hrule{}
-	Index
-%	\hrule{}
-} 
-%,columns=1 %по умолчанию 2
-] 
-%убрать добавление <<title>> в содержание:
-%\noindexintoc %not to add index title in PURE makeidx %intoc is false by default with imakeidx
-
-
 %       https://tex.stackexchange.com/a/132415/44348
 %\makeatletter
 %% we want hyphenation also in the first word
