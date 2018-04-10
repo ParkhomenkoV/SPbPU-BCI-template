@@ -1,0 +1,82 @@
+%%% Предметный указатель  ГОСТ 7.78-99 Index %%%
+%c обобщенными рубриками или развернутый
+%или указатель терминов (в общем случае - произвольное число указателей)
+%подключать до hyperref
+
+%\usepackage{makeidx} %возможно, необходимо подключить И/ИЛИ пройти Tools-> Commands -> MakeIndex
+
+\usepackage{imakeidx} 
+%\indexsetup{level=\section*,toclevel=section,noclearpage}
+\makeindex[program=makeindex,
+options=-s template_settings/common/myindex.ist, %подключаем стилевой файл для форматирования вывода
+name=ru, % префикс для русских указателей 
+% если убрать <<ru>>, то для работы дефолтового придется вручную включать Tools-> Commands -> MakeIndex
+title={\chapterLight{} 
+%   \hrule{}
+	Предметный указатель
+%	\hrule{}
+} 
+%,columns=1 %по умолчанию 2
+]
+\makeindex[program=makeindex,
+options=-s template_settings/common/myindex.ist, %подключаем стилевой файл для форматирования вывода
+name=en, % префикс для английских указателей
+title={\chapterLight{}
+%	\hrule{}
+	Index
+%	\hrule{}
+} 
+%,columns=1 %по умолчанию 2
+] 
+%убрать добавление <<title>> в содержание:
+%\noindexintoc %not to add index title in PURE makeidx %intoc is false by default with imakeidx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% FROM DISERTATION %%%%%%%%%%%%%%%%%%%%%
+%%% Алгоритмы %%%
+
+%\usepackage[linesnumbered]{algorithm2e}
+\usepackage[linesnumbered,vlined,figure,scleft]{algorithm2e}
+
+%% Glogal params %%
+%ruled, tworuled, algoruled --- put lines to wrap the caption plus a line at the bottom (top) - one should not use this together with inline captions!
+%vlined 										--- instead of begin...end will be lines
+%boxed 											--- make a box
+% figure 										--- count as Fig. ...
+
+
+% Settings of caption       --- if one will use \caption{} option 	instead of inline + environment caption.
+%\SetAlgoCaptionSeparator{.}
+%\SetAlgorithmName{Algorithm}{} %last arg is the title of listing table
+
+
+% Settings for lines numbers
+\SetNlSkip{0em}							% sets the value of the space between the line numbers and the text, by default 1em.
+\SetNlSty{normalsize}{\hphantom{0}}{.}%defines how to print line numbers
+%\hspace*{5mm} does not work 
+\SetAlgoNlRelativeSize{-1}	% sets the relative size of line numbers. By default, line numbers are two size smaller than algorithm text
+
+% How to ignore line nuber and to wrap
+%http://tex.stackexchange.com/questions/153646/algorithm2e-disabling-line-numbers-for-specific-lines
+%http://tex.stackexchange.com/questions/86580/how-to-adjust-line-numbers-of-algorithm2e-package
+\makeatletter
+%\newcommand{\nosemic}{\renewcommand{\@endalgocfline}{\relax}}% Drop semi-colon ;
+%\newcommand{\dosemic}{\renewcommand{\@endalgocfline}{\algocf@endline}}% Reinstate semi-colon ;
+%\newcommand{\pushline}{\Indp}% Indent
+%\newcommand{\popline}{\Indm\dosemic}% Undent
+\let\oldnl\nl% Store \nl in \oldnl
+\newcommand{\nonl}{\renewcommand{\nl}{\let\nl\oldnl}}% Remove line number for one line
+\makeatother
+
+
+% Settings for vlines 			
+%\SetInd{0.3em}{0.5em}			%default and spaces before and after are 0.5em and 1em
+%\SetVlineSkip{5em}					% Sets the value of the vertical space after the little horizontal line which closes a block in vlined mode
+
+%% User abbreviations for ASTRA %%
+\SetKwInput{KwInput}{Input}
+\SetKwInput{KwOutput}{Output}
+%% See also %%
+%http://tex.stackexchange.com/questions/145114/caption-below-boxed-algorithm2e-when-used-as-a-figure
+%http://tex.stackexchange.com/questions/83536/align-comments-in-algorithm-with-package-algorithm2e
+
