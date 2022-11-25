@@ -20,7 +20,8 @@ item_2 "\\nopagebreak\n \\subsubitem ---~" %тире перед первым пунктом 2 уровня
 
 %%item_01 "\\nopagebreak\n \\subitem " 
 %%item_12 "\\nopagebreak\n \\subsubitem "
-
+item_01 "\\nopagebreak\n \\subitem ---~" %тире перед первым пунктом 
+item_12 "\\nopagebreak\n \\subsubitem ---~" %тире перед первым пунктом 
 
 item_x1 "\\nopagebreak\n \\subitem ---~" %тире перед пунктами 1 уровня, когда на 0 нет страниц
 item_x2 "\\nopagebreak\n \\subsubitem ---~" %тире перед пунктами 2 уровня, когда на 1 нет страниц 

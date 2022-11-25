@@ -44,7 +44,6 @@ Vladimir Parkhomenko
 ### Content editors of SPbPU-BCI-template
 
 Vladimir Parkhomenko,
-Oleg Piskun,
 Konstantin Shvetsov,
 Alexander Schukin
 
@@ -63,6 +62,7 @@ Tatiana Baboshina
 
 Составители шаблона и документов SPbPU-BCI выражают благодарность Андрею Акиншину, а также
 
+- А.В. Речинскому, В.М. Ицыксону, П.Д. Дробинцеву за поддержку проекта,
 - Юлии Мартыновой за оригинальный вариант шаблона,
 - dustalov, Lenchik, tonkonogov за значительный вклад и обсуждения,
 - storkvist, kshmirko, ZoomRmc, tonytonov, Thibak, eximius8, Nizky за полезные правки и замечания,
